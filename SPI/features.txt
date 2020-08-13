@@ -1,0 +1,68 @@
+--------------------------------------General information--------------------------------
+1-3 spi peripherlas available 
+2-trasnmitter and receiver is buffered with internal fifo buffers
+3-internal fifo size is 8x16
+------------------------------------------------------------------------------------------
+-------------------------------Bit rate generation---------------------------------------
+4-Bit rates supported upto 2mhz and higher 
+5-clock is first passed through a prescaler that divide it by values from 2 to 254 this
+values is choosen from (ssicpsr) register and then further divided with value from 1 to 256 
+which its value is calcaulted from (1+scr) where scr is set in control register (ssicr0) 
+
+6-clock output frequency  SSInClk = SysClk / (CPSDVSR * (1 + SCR))
+7- source of sysclk could be system clock or piosc.this is selected in sc field in the 
+clock configuration register (ssicc).
+------------------------------------------------------------------------------------------
+--------------------------------------FIFO operation--------------------------------------
+8-8X16 fifo
+9-fifo is writte when ssidr register is written to.
+10-data is stored in the fifo l7d ma tranmission logic t2raha.
+11-received data is stored in the buffer l7d ma tt2ri usinf (ssidr) register
+-------------------------------------------------------------------------------------------
+----------------------------------Interrupts-----------------------------------------------
+1-upto four interrupt sources
+2-all interrupts source generate one interrupt
+3-all interrupts are maskable through (ssim)
+-------------------------------------------------------------------------------------------
+-----------------------------------frame format--------------------------------------------
+three frame fromats you can choose from through frf bit in (ssicr0)
+-------------------------------------------------------------------------------------------
+
+
+features that we want to implement functions and helper functions for 
+1-setting frame mode
+2-setting spi format 
+3-setting spi size
+4-setting clock
+5-setting master or slave
+6-spi enable/disable
+7-lw htb3t data msh 16 bit lazm t3l right justify abl ma t7t el data fl buffer
+8-functions to check status of spi bus and fifos
+9-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
